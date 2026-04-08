@@ -97,6 +97,16 @@ h1 {
 .label, .hint {
 	color: var(--muted);
 	font-size: 0.92rem;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.icon-small {
+	width: 18px;
+	height: 18px;
+	flex: 0 0 auto;
+	color: inherit;
 }
 
 .panel-header {
