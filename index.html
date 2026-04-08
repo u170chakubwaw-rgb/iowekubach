@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f172a">
+    <title>Debt Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-shell">
+        <header class="hero-card">
+            <p class="eyebrow">iouekubach.live</p>
+            <h1>Kto i ile mi wisi 💵</h1>
+            
+        </header>
+
+        <section class="panel summary-panel">
+            <div>
+                <span class="label">Łącznie do odzyskania</span>
+                <strong id="total-balance">0 zł</strong>
+            </div>
+            <div>
+                <span class="label">Osób na liście</span>
+                <strong id="people-count">0</strong>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-header">
+                <h2>Lista osób</h2>
+            </div>
+            <div id="people-container" class="people-list"></div>
+        </section>
+
+        <section id="details-view" class="panel details-panel hidden">
+            <div class="panel-header details-top">
+                <div class="person-header">
+                    <img id="selected-person-avatar" class="person-avatar person-avatar-large" src="assets/Jan P.jpg" alt="Jan P.">
+                    <p class="eyebrow">Szczegóły</p>
+                    <h2 id="selected-person-name">Osoba</h2>
+                    <p id="selected-person-balance" class="balance-text"></p>
+                </div>
+                <button id="close-btn" class="ghost-btn" type="button">Zamknij</button>
+            </div>
+
+            <div class="history-block">
+                <h3>Historia transakcji</h3>
+                <div id="history-list" class="history-list"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
