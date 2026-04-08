@@ -4,10 +4,10 @@ const defaultData = {
     'Jan P.': [
         { desc: 'Zapłacił moją kartą', amount: 5, date: '2026-04-08T10:00:00.000Z' }
     ],
-    'Jakub Wilk': [
+    'Jakub': [
         { desc: 'Za puszkę gazowanego Tymbarka', amount: 4.5, date: '' }
     ],
-    'Dawid Meteush': [
+    'Dawid M': [
         { desc: 'ej ma ktos pozyczyc 2 zl', amount: 2, date: '2026-03-23T11:00:00.000Z' }
     ]
 };
@@ -32,12 +32,12 @@ function getPersonAvatarUrl(name) {
         return 'assets/Jan P.jpg';
     }
 
-    if (name === 'Jakub Wilk') {
-        return 'assets/Jakub W.jpg';
+    if (name === 'Jakub') {
+        return 'assets/images.png';
     }
 
-    if (name === 'Dawid Meteush') {
-        return 'assets/Dawid M.jpg';
+    if (name === 'Dawid M') {
+        return 'assets/images.png';
     }
 
     return '';
@@ -89,16 +89,20 @@ function loadData() {
 
         const filteredData = {};
 
+        if (Array.isArray(parsedData['Jakub Wilk']) && !parsedData['Jakub']) {
+            parsedData['Jakub'] = parsedData['Jakub Wilk'];
+        }
+
+        if (Array.isArray(parsedData['Dawid Meteush']) && !parsedData['Dawid M']) {
+            parsedData['Dawid M'] = parsedData['Dawid Meteush'];
+        }
+
         allowedPeople.forEach((name) => {
             const defaultEntries = Array.isArray(defaultData[name]) ? JSON.parse(JSON.stringify(defaultData[name])) : [];
-                if (name === 'Jakub Wilk') {
-                    filteredData[name] = defaultEntries;
-                    return;
-                }
 
-                const savedEntries = Array.isArray(parsedData[name]) ? parsedData[name] : [];
+            const savedEntries = Array.isArray(parsedData[name]) ? parsedData[name] : [];
 
-                filteredData[name] = normalizeEntries([...defaultEntries, ...savedEntries]);
+            filteredData[name] = normalizeEntries([...defaultEntries, ...savedEntries]);
         });
 
         localStorage.setItem(STORAGE_KEY, JSON.stringify(filteredData));
