@@ -5,10 +5,10 @@ const defaultData = {
         { desc: 'Zapłacił moją kartą', amount: 5, date: '2026-04-08T10:00:00.000Z' }
     ],
     'Jakub Wilk': [
-        { desc: 'Za puszkę gazowanego Tymbarka', amount: 4.5, date: '2026-04-08T10:30:00.000Z' }
+        { desc: 'Za puszkę gazowanego Tymbarka', amount: 4.5, date: '' }
     ],
     'Dawid Meteush': [
-        { desc: 'ej ma ktos pozyczyc 2 zl', amount: 2, date: '2026-04-08T11:00:00.000Z' }
+        { desc: 'ej ma ktos pozyczyc 2 zl', amount: 2, date: '2026-03-23T11:00:00.000Z' }
     ]
 };
 
